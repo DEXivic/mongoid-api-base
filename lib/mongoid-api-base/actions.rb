@@ -44,7 +44,8 @@ module MongoidApiBase
       def destroy
         object = find_object
         if object.destroy
-          render nothing: true, status: 204
+          #render nothing: true, status: 204
+          render json: { status: 204 }
         else
           render json: object.errors, status: :unprocessable_entity
         end
